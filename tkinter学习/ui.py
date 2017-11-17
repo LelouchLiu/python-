@@ -14,6 +14,7 @@ Website: www.zetcode.com
 """
 
 from tkinter import *
+from fileDeal import FileDeal
 class Example(Frame):
   
     def __init__(self):
@@ -39,7 +40,12 @@ class Example(Frame):
     def onclick(self):
         print('butt clicked')
         path=self.path.get()
+        id=self.idtext.get()
+        name=self.newName.get()
         print(path+'\n'+self.idtext.get()+'\n'+self.newName.get())
+        deal=FileDeal(path,id,name)
+        deal.chname()
+
 #三个按钮的布局都是建立在self下，即是app下的，所以，在self没有进行pack的时候，三个按钮无法显示出来，
 def main():
   
