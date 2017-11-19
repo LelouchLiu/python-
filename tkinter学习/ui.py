@@ -1,27 +1,16 @@
+
+import sys
+sys.path.append('.\批量修改文件名')
 from tkinter import *
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
+from manage import Manage
 
-"""
-ZetCode Tkinter tutorial
-
-This script shows a simple window
-on the screen.
-
-Author: Jan Bodnar
-Last modified: July 2017
-Website: www.zetcode.com
-"""
-
-from tkinter import *
-from fileDeal import FileDeal
 class Example(Frame):
   
     def __init__(self):
         super().__init__()
          
         self.initUI()
-        
+        self.manage=Manage()
     
     def initUI(self):
         
@@ -43,8 +32,8 @@ class Example(Frame):
         id=self.idtext.get()
         name=self.newName.get()
         print(path+'\n'+self.idtext.get()+'\n'+self.newName.get())
-        deal=FileDeal(path,id,name)
-        deal.chname()
+        self.manage.fileManage(path,id,name)
+
 
 #三个按钮的布局都是建立在self下，即是app下的，所以，在self没有进行pack的时候，三个按钮无法显示出来，
 def main():

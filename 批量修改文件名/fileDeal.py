@@ -1,6 +1,7 @@
 import re
 import os
 import os.path
+print ('导入fileDeal')
 class FileDeal:
     def __init__(self,path,id,name):
         self.path=path
