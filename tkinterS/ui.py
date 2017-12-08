@@ -37,10 +37,10 @@ class Example(Frame):
 #三个按钮的布局都是建立在self下，即是app下的，所以，在self没有进行pack的时候，三个按钮无法显示出来，
 def main():
   
-    root = Tk()
-    root.geometry("250x150+300+300")
+    root1 = Tk()
+    root1.geometry("250x150+300+300")
     app = Example()
-    root.mainloop()  
+    root1.mainloop()  
 
 
 
